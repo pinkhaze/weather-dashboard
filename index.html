@@ -14,6 +14,29 @@
     <title>Weather Dashboard</title>
 </head>
 <body>
-    <script src="./assets/js/script.js"></script>
+  <header>
+    <h1>Weather Dashboard</h1>
+  </header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-3 column">
+        <div class="container-fluid search-container">
+          <div class="d-grid gap-2">
+            <label for="city-name" class="form-label">Search for a City:</label>
+            <input id="city-name" class="form-control" type="text" autofocus="true"/>
+            <button type="button" class="btn search-btn">Search</button>
+          </div>
+        </div>
+        <div class="container-fluid saved-container"></div>
+      </div>
+      <div class="col-8 column">
+        <div class="row current-forecast"></div>
+        <div class="row future-forecast">
+          <h3>5-Day Forecast</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>
