@@ -1,5 +1,7 @@
-var searchBtn = document.querySelector('.search-btn');
+const searchBtn = document.querySelector('.search-btn');
 let cityInputEl = document.querySelector('#city-name');
+
+let forecastCards = document.querySelectorAll('.day');
 
 const apiKey = 'f2db296797ed76354316200166fc1172';
 
@@ -43,6 +45,6 @@ function fetchWeather(lat, lon) {
 }
 
 function displayWeather(data) {
-
+   
 }
 searchBtn.addEventListener('click', formSubmitHandler);

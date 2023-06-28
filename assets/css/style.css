@@ -21,25 +21,35 @@ h3 {
     height: 150px;
 }
 
-.saved-container {
-    min-height: 400px;
-}
-
-.current-forecast {
-    height: 200px;
-    margin-bottom: 10px;
-    border: 2px solid black;
-}
-
-.future-forecast {
-    height: 300px;
-    border: 2px solid black;
-}
-
 .d-grid {
     margin-top: 20px;
 }
 
 .search-btn {
     background-color: rgb(227, 245, 25);
+}
+
+.saved-container {
+    min-height: 400px;
+}
+
+.current-forecast {
+    height: 250px;
+    margin-bottom: 10px;
+    border: 2px solid black;
+}
+
+.future-header {
+    margin: 15px;
+
+}
+
+.future-forecast {
+    height: 500px;
+    border: 2px solid black;
+    margin-top: -10px;
+}
+
+.day {
+    border: 2px solid black;
 }
