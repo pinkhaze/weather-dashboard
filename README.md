@@ -1,7 +1,6 @@
 # weather-dashboard
 
 # Weather Dashboard
-Third-Party APIs: Work Day Scheduler
 
 ## Description
 
