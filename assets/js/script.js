@@ -25,6 +25,15 @@ function formSubmitHandler(event) {
     cityInputEl.value = '';
 }
 
+// Handle clicks on saved search buttons
+function buttonClickHandler(event) {
+    if (event.target.matches('.btn-history')) {
+        const searchedBtn = event.target;
+        const searchTerm = searchedBtn.getAttribute('search-term');
+        fetchLatLong(searchTerm);
+    }
+}
+
 // Fetch longitude and latitude values for search input from Geocoding API
 function fetchLatLong(city) {
     const apiUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + city + '&limit=1&appid=' + apiKey;
@@ -178,9 +187,24 @@ function renderSearches() {
     }
 }
 
+function clearButtonsHandler() {
+    localStorage.clear();
+    searchArr = [];
+    renderSearches();
+}
+
+// Load saved city searches if local storage is not empty
+function init() {
+    let storedSearches = localStorage.getItem('searches');
+    if (storedSearches) {
+        searchArr = JSON.parse(storedSearches);
+    }
+    renderSearches();
+}
+
 // Event listeners for search, searched and clear buttons
 searchBtn.addEventListener('click', formSubmitHandler);
-
-
+savedContainer.addEventListener('click', buttonClickHandler);
+clearBtn.addEventListener('click', clearButtonsHandler);
 
 init();
