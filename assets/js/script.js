@@ -36,7 +36,7 @@ function buttonClickHandler(event) {
 
 // Fetch longitude and latitude values for search input from Geocoding API
 function fetchLatLong(city) {
-    const apiUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + city + '&limit=1&appid=' + apiKey;
+    const apiUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + city + '&limit=1&appid=' + apiKey;
 
     fetch(apiUrl)
         .then(function (response) {
