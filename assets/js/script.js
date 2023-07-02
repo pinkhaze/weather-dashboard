@@ -152,7 +152,35 @@ function displayFutureWeather(data) {
         }
 }
 
+// Save searches in local storage
+function storeSearches(city) {
+    // If search term already in array, stop function
+    if (searchArr.includes(city)) {
+        return;
+    }
+    // Otherwise, add search term to array
+    searchArr.push(city);
+    localStorage.setItem('searches', JSON.stringify(searchArr));
+    renderSearches();
+}
+
+// Load searched cities as buttons
+function renderSearches() {
+    // Clear input
+    savedContainer.innerHTML = '';
+    for (let i = 0; i < searchArr.length; i++) {
+        let searchedBtn = document.createElement('button');
+        searchedBtn.classList.add('btn', 'searched-btn', 'text-uppercase', 'btn-history');
+        searchedBtn.setAttribute('type', 'button');
+        searchedBtn.setAttribute('search-term', searchArr[i]);
+        searchedBtn.textContent = searchArr[i];
+        savedContainer.append(searchedBtn);
+    }
+}
 
 // Event listeners for search, searched and clear buttons
 searchBtn.addEventListener('click', formSubmitHandler);
 
+
+
+init();
