@@ -1,27 +1,29 @@
-# weather-dashboard
-
 # Weather Dashboard
-Third-Party APIs: Work Day Scheduler
+Server-Side-APIs: Weather Dashboard
 
 ## Description
 
-The purpose of this project is to add jQuery functionality to starter code for a work day scheduler. In addition, the work day scheduler demonstrates the following jQuery skills:
- * using the Day.js library in the browser
- * adding and removing classes
- * using DOM traversal to grab id attributes
- * setting and getting user input to and from local storage
+The purpose of this project is to access data from Open Weather Map APIs to build a weather dashboard that contains dynamically updated HTML and CSS. In addition, the work day scheduler demonstrates the following jQuery skills:
+ * make requests with specific parameters to retrieve data functionality from multiple APIs
+ * store persistent data in local storage
 
 In order to meet requirements, the deployed weather dashboard application should have the following capabilities:
- * displays the current date at the top of the webpage
- * displays a set of timeblocks matching standard business hours 
- * the timeblocks are color coded to reflect the following:
-        - gray: past timeblock
-        - red: present timeblock
-        - green: future timeblock
- * allows the user to click on a timeblock and enter an event
- * clicking the save button for a timeblock saves the text for the even in local storage
- * refreshing the page 
- * saved events persist after refreshing the page
+ * displays a form input for searching by city
+ * displays the current and future weather conditons
+ * the current weather conditions contain the following:
+        - city name
+        - current date
+        - icon representation of weather conditions
+        - temperature
+        - wind speed
+        - humidity
+ * the future weather conditions contain 5-days of forecasts containing the following:
+        - date
+        - icon representation of weather conditions
+        - temperature
+        - wind speed
+        - humidity
+ * clicking on a city in the search history presents the current and future conditions for that city
 
 ## Installation
 
