@@ -1,3 +1,4 @@
+/* Set main colors*/
 :root {
     --primary-color: #5f9ea0;
     --secondary-color: #ed7e60;
@@ -8,6 +9,7 @@ body {
     font-family: 'Prompt', sans-serif;
 }
 
+/* Style headers */
 header {
     display: flex;
     justify-content: center;
@@ -43,6 +45,7 @@ p {
     border: 1px solid;
 }
 
+/* Hide second column */
 .hidden {
     display: none;
 }
@@ -51,11 +54,11 @@ p {
     margin: 5px;
 }
 
-
 .search-container {
     height: 180px;
 }
 
+/* Style elements in search container */
 .d-grid {
     margin-top: 30px;
 }
@@ -64,6 +67,7 @@ p {
     background-color: var(--secondary-color);
 }
 
+/* Style search history container elements */
 .clear-btn {
     background-color: var(--tertiary-color);
 }
@@ -72,8 +76,14 @@ p {
     min-height: 400px;
 }
 
+/* Style and size containers */
+.col-left, .current-forecast, .card {
+    background-color: var(--primary-color);
+}
+
+/* Style elements in current container */
 .current-forecast {
-    height: 230px;
+    min-height: 230px;
     margin-bottom: 10px;
 }
 
@@ -83,9 +93,10 @@ p {
 
 .current-right {
     margin-top: 0px;
-    margin-left: 0px;
+    margin-top: 10px;
 }
 
+/* Style elements in future container */
 .future-forecast {
     height: 400px;
 }
@@ -102,8 +113,14 @@ p {
     width: 100px;
 }
 
-.col-left, .current-forecast, .card {
-    background-color: var(--primary-color);
-}
+/* Cards are stacked on top of each other at 768px or smaller */
+@media screen and (max-width: 768px) {
+    .main {
+      display: flex;
+      flex-direction: column;
+    }
+    .col-left {
+        width: 100%;
+    }
 
-/* @media 768*/
+  }

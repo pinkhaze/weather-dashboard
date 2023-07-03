@@ -27,7 +27,7 @@ function formSubmitHandler(event) {
 
 // Handle clicks on saved search buttons
 function buttonClickHandler(event) {
-    if (event.target.matches('.btn-history')) {
+    if (event.target.matches('.search-history')) {
         const searchedBtn = event.target;
         const searchTerm = searchedBtn.getAttribute('search-term');
         fetchLatLong(searchTerm);
@@ -114,9 +114,11 @@ function displayCurrentWeather(data) {
     currentCardRight.append(currentIconEl)
 }
 
+// Dynamically generate future weather information and elements
 function displayFutureWeather(data) {
     const dayStartArr = [];
     let firstDayIndex;
+    // For each index with a time of "00:00:00", add index to dayStartArr
     for (let i = 0; i < data.list.length; i++) {
         if (data.list[i].dt_txt.includes('00:00:00')) {
             dayStartArr.push(i);
@@ -124,6 +126,7 @@ function displayFutureWeather(data) {
         }
     }
 
+    // Create 5 forecast cards
     for (let i = 0; i < forecastCards.length; i++) {
         // Clear input from all forecast cards
         forecastCards[i].innerHTML = '';
@@ -178,8 +181,8 @@ function renderSearches() {
     // Clear input
     savedContainer.innerHTML = '';
     for (let i = 0; i < searchArr.length; i++) {
-        let searchedBtn = document.createElement('button');
-        searchedBtn.classList.add('btn', 'searched-btn', 'text-uppercase', 'btn-history');
+        const searchedBtn = document.createElement('button');
+        searchedBtn.classList.add('btn', 'searched-btn', 'text-uppercase', 'search-history');
         searchedBtn.setAttribute('type', 'button');
         searchedBtn.setAttribute('search-term', searchArr[i]);
         searchedBtn.textContent = searchArr[i];
