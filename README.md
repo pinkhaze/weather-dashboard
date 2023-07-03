@@ -31,5 +31,6 @@ In order to meet requirements, the deployed weather dashboard application should
 
 ## Usage
 
+![Screenshot](https://github.com/pinkhaze/weather-dashboard/assets/55771228/87fc872e-70bf-44b8-8d05-c6e3563c5012)
 
 
