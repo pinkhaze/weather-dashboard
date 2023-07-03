@@ -86,7 +86,7 @@ function displayCurrentWeather(data) {
     currentCardLeft.innerHTML = '';
 
     // City and current date
-    const cityDate = data.name + '  ' + dayjs().format('MM/DD/YYYY');
+    const cityDate = data.name + '  ' + '(' + dayjs().format('MM/DD/YYYY') + ')';
     const cityDateEl = document.createElement('h4');
     cityDateEl.innerHTML = cityDate;
 
